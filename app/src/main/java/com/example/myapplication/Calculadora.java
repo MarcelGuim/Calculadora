@@ -11,11 +11,13 @@ import androidx.core.view.WindowInsetsCompat;
 import android.view.TextureView;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.TextView;
 
 public class Calculadora extends AppCompatActivity {
     TextView textView;
     Button buttonC;
+    CheckBox radians, degrees;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,16 +30,22 @@ public class Calculadora extends AppCompatActivity {
         });
 
         textView = findViewById(R.id.resultado);
-    }
-    float numActual = 0;
+        radians = findViewById(R.id.radians);
+        degrees = findViewById(R.id.degrees);
 
-    float numEntrado = 0;
+    }
+    double numActual = 0;
+
+    double numEntrado = 0;
     boolean hayOperacion = false;
     boolean sumar = false;
     boolean restar = false;
     boolean multiplicar = false;
     boolean dividir = false;
-    float resultado = 0;
+    boolean sin = false;
+    boolean cos = false;
+    boolean tan = false;
+    double resultado = 0;
 
     public void setValor1(View v)
     {
@@ -165,6 +173,9 @@ public class Calculadora extends AppCompatActivity {
         sumar = false;
         restar = false;
         multiplicar = false;
+        sin = false;
+        cos = false;
+        tan = false;
     }
     public void Sumar(View v)
     {
@@ -173,6 +184,9 @@ public class Calculadora extends AppCompatActivity {
         sumar = true;
         restar = false;
         multiplicar = false;
+        sin = false;
+        cos = false;
+        tan = false;
     }
     public void Restar(View v)
     {
@@ -181,6 +195,9 @@ public class Calculadora extends AppCompatActivity {
         sumar = false;
         restar = true;
         multiplicar = false;
+        sin = false;
+        cos = false;
+        tan = false;
     }
     public void Multiplicar(View v)
     {
@@ -189,6 +206,9 @@ public class Calculadora extends AppCompatActivity {
         sumar = false;
         restar = false;
         multiplicar = true;
+        sin = false;
+        cos = false;
+        tan = false;
     }
     public void PonResultado(View v){
         if (!hayOperacion)
@@ -225,7 +245,118 @@ public class Calculadora extends AppCompatActivity {
                numActual = resultado;
                hayOperacion = false;
            }
+           else if (sin)
+           {
+               if(radians.isChecked())
+               {
+                   resultado = Math.sin(numEntrado);
+                   textView.setText(String.valueOf(resultado));
+                   numActual = resultado;
+                   hayOperacion = false;
+
+               }
+               else if(degrees.isChecked())
+               {
+                   resultado = Math.sin(numEntrado*Math.PI/180);
+                   textView.setText(String.valueOf(resultado));
+                   numActual = resultado;
+                   hayOperacion = false;
+
+               }
+               else
+               {
+                   textView.setText("Marca grados o radianes");
+                   numActual = resultado;
+               }
+           }
+           else if (cos)
+           {
+               if(radians.isChecked())
+               {
+                   resultado = Math.cos(numEntrado);
+                   textView.setText(String.valueOf(resultado));
+                   numActual = resultado;
+                   hayOperacion = false;
+
+               }
+               else if(degrees.isChecked())
+               {
+                   resultado = Math.cos(numEntrado*Math.PI/180);
+                   textView.setText(String.valueOf(resultado));
+                   numActual = resultado;
+                   hayOperacion = false;
+
+               }
+               else
+               {
+                   textView.setText("Marca grados o radianes");
+                   numActual = resultado;
+               }
+           }
+           else if (tan)
+           {
+               if(radians.isChecked())
+               {
+                   resultado = Math.tan(numEntrado);
+                   textView.setText(String.valueOf(resultado));
+                   numActual = resultado;
+                   hayOperacion = false;
+
+               }
+               else if(degrees.isChecked())
+               {
+                   resultado = Math.tan(numEntrado*Math.PI/180);
+                   textView.setText(String.valueOf(resultado));
+                   numActual = resultado;
+                   hayOperacion = false;
+
+               }
+               else
+               {
+                   textView.setText("Marca grados o radianes");
+                   numActual = resultado;
+               }
+           }
+
         }
     }
 
+    public void Cos(View v)
+    {
+        hayOperacion = true;
+        dividir = false;
+        sumar = false;
+        restar = false;
+        multiplicar = false;
+        sin = false;
+        cos = true;
+        tan = false;
+        numEntrado = numActual;
+    }
+    public void Sin(View v)
+    {
+        hayOperacion = true;
+        dividir = false;
+        sumar = false;
+        restar = false;
+        multiplicar = false;
+        sin = true;
+        cos = false;
+        tan = false;
+        numEntrado = numActual;
+
+    }
+    public void Tan(View v)
+    {
+        hayOperacion = true;
+        dividir = false;
+        sumar = false;
+        restar = false;
+        multiplicar = false;
+        sin = false;
+        cos = false;
+        tan = true;
+        numEntrado = numActual;
+
+    }
 }

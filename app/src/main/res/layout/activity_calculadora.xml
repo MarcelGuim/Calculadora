@@ -29,12 +29,12 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/porcent"
+        android:id="@+id/sin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="7dp"
-        android:onClick="Error"
-        android:text="%"
+        android:onClick="Sin"
+        android:text="Sin"
         app:layout_constraintStart_toEndOf="@+id/AC"
         app:layout_constraintTop_toTopOf="@+id/AC" />
 
@@ -45,8 +45,8 @@
         android:layout_marginStart="7dp"
         android:onClick="Dividir"
         android:text="/"
-        app:layout_constraintStart_toEndOf="@+id/porcent"
-        app:layout_constraintTop_toTopOf="@+id/porcent" />
+        app:layout_constraintStart_toEndOf="@+id/sin"
+        app:layout_constraintTop_toTopOf="@+id/sin" />
 
     <Button
         android:id="@+id/b7"
@@ -110,7 +110,7 @@
         android:layout_height="wrap_content"
         android:onClick="setValor9"
         android:text="9"
-        app:layout_constraintStart_toStartOf="@+id/porcent"
+        app:layout_constraintStart_toStartOf="@+id/sin"
         app:layout_constraintTop_toTopOf="@+id/b8" />
 
     <Button
@@ -177,11 +177,11 @@
         app:layout_constraintTop_toTopOf="@+id/b3" />
 
     <Button
-        android:id="@+id/punto"
+        android:id="@+id/Cos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="Error"
-        android:text="."
+        android:onClick="Cos"
+        android:text="Cos"
         app:layout_constraintStart_toStartOf="@+id/b2"
         app:layout_constraintTop_toTopOf="@+id/b0" />
 
@@ -189,10 +189,10 @@
         android:id="@+id/coma"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="Error"
-        android:text=","
+        android:onClick="Tan"
+        android:text="Tan"
         app:layout_constraintStart_toStartOf="@+id/b3"
-        app:layout_constraintTop_toTopOf="@+id/punto" />
+        app:layout_constraintTop_toTopOf="@+id/Cos" />
 
     <Button
         android:id="@+id/igual"
@@ -209,7 +209,7 @@
         android:layout_height="69dp"
         android:ems="10"
         android:inputType="text"
-        app:layout_constraintBottom_toTopOf="@+id/porcent"
+        app:layout_constraintBottom_toTopOf="@+id/sin"
         app:layout_constraintEnd_toStartOf="@+id/guideline"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -225,5 +225,25 @@
         app:layout_constraintEnd_toStartOf="@+id/guideline"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <CheckBox
+        android:id="@+id/radians"
+        android:layout_width="96dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="60dp"
+        android:text="Radians"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Cos" />
+
+    <CheckBox
+        android:id="@+id/degrees"
+        android:layout_width="95dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="28dp"
+        android:text="Degrees"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/radians"
+        app:layout_constraintTop_toTopOf="@+id/radians" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
