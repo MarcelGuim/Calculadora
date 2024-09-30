@@ -12,7 +12,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="7dp"
-        android:onClick="setAC"
         android:text="AC"
         app:layout_constraintStart_toEndOf="@+id/C"
         app:layout_constraintTop_toTopOf="@+id/C" />
@@ -23,7 +22,6 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="6dp"
         android:layout_marginTop="246dp"
-        android:onClick="setC"
         android:text="C"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -33,7 +31,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="7dp"
-        android:onClick="Sin"
         android:text="Sin"
         app:layout_constraintStart_toEndOf="@+id/AC"
         app:layout_constraintTop_toTopOf="@+id/AC" />
@@ -43,7 +40,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="7dp"
-        android:onClick="Dividir"
         android:text="/"
         app:layout_constraintStart_toEndOf="@+id/sin"
         app:layout_constraintTop_toTopOf="@+id/sin" />
@@ -53,7 +49,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
-        android:onClick="setValor7"
+        android:tag="7"
         android:text="7"
         app:layout_constraintStart_toStartOf="@+id/C"
         app:layout_constraintTop_toBottomOf="@+id/C" />
@@ -63,7 +59,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
-        android:onClick="setValor4"
         android:text="4"
         app:layout_constraintEnd_toEndOf="@+id/b7"
         app:layout_constraintTop_toBottomOf="@+id/b7" />
@@ -73,7 +68,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
-        android:onClick="setValor1"
         android:text="1"
         app:layout_constraintEnd_toEndOf="@+id/b4"
         app:layout_constraintTop_toBottomOf="@+id/b4" />
@@ -99,7 +93,6 @@
         android:id="@+id/b8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="setValor8"
         android:text="8"
         app:layout_constraintStart_toStartOf="@+id/AC"
         app:layout_constraintTop_toTopOf="@+id/b7" />
@@ -108,7 +101,6 @@
         android:id="@+id/b9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="setValor9"
         android:text="9"
         app:layout_constraintStart_toStartOf="@+id/sin"
         app:layout_constraintTop_toTopOf="@+id/b8" />
@@ -117,7 +109,6 @@
         android:id="@+id/multiplicar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="Multiplicar"
         android:text="*"
         app:layout_constraintStart_toStartOf="@+id/dividir"
         app:layout_constraintTop_toTopOf="@+id/b9" />
@@ -126,7 +117,6 @@
         android:id="@+id/b5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="setValor5"
         android:text="5"
         app:layout_constraintStart_toStartOf="@+id/b8"
         app:layout_constraintTop_toTopOf="@+id/b4" />
@@ -135,7 +125,6 @@
         android:id="@+id/b6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="setValor6"
         android:text="6"
         app:layout_constraintStart_toStartOf="@+id/b9"
         app:layout_constraintTop_toTopOf="@+id/b5" />
@@ -144,7 +133,6 @@
         android:id="@+id/resta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="Restar"
         android:text="-"
         app:layout_constraintStart_toStartOf="@+id/multiplicar"
         app:layout_constraintTop_toTopOf="@+id/b6" />
@@ -153,7 +141,6 @@
         android:id="@+id/b2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="setValor2"
         android:text="2"
         app:layout_constraintStart_toStartOf="@+id/b5"
         app:layout_constraintTop_toTopOf="@+id/b1" />
@@ -162,46 +149,41 @@
         android:id="@+id/b3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="setValor3"
         android:text="3"
         app:layout_constraintStart_toStartOf="@+id/b6"
         app:layout_constraintTop_toTopOf="@+id/b2" />
 
     <Button
-        android:id="@+id/mas"
+        android:id="@+id/suma"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="Sumar"
         android:text="+"
         app:layout_constraintStart_toStartOf="@+id/resta"
         app:layout_constraintTop_toTopOf="@+id/b3" />
 
     <Button
-        android:id="@+id/Cos"
+        android:id="@+id/cos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="Cos"
         android:text="Cos"
         app:layout_constraintStart_toStartOf="@+id/b2"
         app:layout_constraintTop_toTopOf="@+id/b0" />
 
     <Button
-        android:id="@+id/coma"
+        android:id="@+id/tan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="Tan"
         android:text="Tan"
         app:layout_constraintStart_toStartOf="@+id/b3"
-        app:layout_constraintTop_toTopOf="@+id/Cos" />
+        app:layout_constraintTop_toTopOf="@+id/cos" />
 
     <Button
         android:id="@+id/igual"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="PonResultado"
         android:text="="
-        app:layout_constraintStart_toStartOf="@+id/mas"
-        app:layout_constraintTop_toTopOf="@+id/coma" />
+        app:layout_constraintStart_toStartOf="@+id/suma"
+        app:layout_constraintTop_toTopOf="@+id/tan" />
 
     <EditText
         android:id="@+id/resultado"
@@ -212,7 +194,8 @@
         app:layout_constraintBottom_toTopOf="@+id/sin"
         app:layout_constraintEnd_toStartOf="@+id/guideline"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <EditText
         android:id="@+id/editTextText2"
@@ -234,7 +217,8 @@
         android:text="Radians"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Cos" />
+        app:layout_constraintTop_toBottomOf="@+id/cos"
+        tools:ignore="TouchTargetSizeCheck" />
 
     <CheckBox
         android:id="@+id/degrees"
